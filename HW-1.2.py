@@ -78,7 +78,7 @@ while not converged and ii_count < 25:
         E += point_E_Field(q=(1 / num_charges), charge_loc=loc, field_loc=np.array([0, 1]))
     # First, I want to make sure E_x is close to 0
     assert np.abs(E[0]) < 1e-5
-    error.append(np.abs(E_exact - E[1]) / E_exact)  # For some reason I am getting half the value here
+    error.append(np.abs(E_exact - E[1]) / E_exact)
     converged = True if error[-1] < 0.01 else False # I want to 1% to make the plot look better
     ii_count += 1
     num_charges += 1
